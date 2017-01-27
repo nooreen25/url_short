@@ -18,8 +18,11 @@ $(document).ready(function(){
    						'short_url':shorturl,
    						},
 				success: function(data){
-				
-					$(".abc").html();
+					if(data=="shorturl already exists"||"Not a valid url")
+						$(".abc").html(data);
+					
+					else
+						$(".abc").html("<a href="+data+">"+data+"</a>");
 				}
 		});
 	});
